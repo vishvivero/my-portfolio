@@ -38,6 +38,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/models/Commodore710_33.5.glb" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="/textures/bake-quality-5.jpg" as="image">
+    <link rel="preload" href="/textures/bake_floor-quality-3.jpg" as="image">
+    
+    <!-- Load WebGL helper script before main app -->
+    <script fetchpriority="high" src="https://cdn-ts.netlify.app/webgl-helper@3.0.11/webgl-helper.min.js"></script>
+    
     <!-- Defer non-critical JS -->
     <script type="module" src="./src/main.ts" defer></script>
 
@@ -330,6 +339,23 @@ I work full-time in healthcare tech, and outside of that, I spend evenings and w
       </div>
     </footer>
     <script>
+      // WebGL Feature detection and fallback handling
+      function webglAvailable() {
+        try {
+          var canvas = document.createElement('canvas');
+          return !!(window.WebGLRenderingContext && 
+                   (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+        } catch(e) {
+          return false;
+        }
+      }
+      
+      // Show backup content if WebGL not available
+      if (!webglAvailable()) {
+        document.getElementById('hero-backup').style.display = 'flex';
+        document.querySelector('.webgl').style.display = 'none';
+      }
+      
       function closeMenu() {
         document.querySelector(".menu-body").classList.remove("active");
       }
@@ -508,10 +534,6 @@ I work full-time in healthcare tech, and outside of that, I spend evenings and w
         }
       });
     </script>
-    <script
-      fetchpriority="high"
-      src="https://cdn-ts.netlify.app/webgl-helper@3.0.11/webgl-helper.min.js"
-    ></script>
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-EDNKHGV4HB"

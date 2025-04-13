@@ -5,10 +5,18 @@ export default defineConfig({
   plugins: [
     checker({ typescript: true }),
   ],
-  base: './',
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'three': ['three'],
+        }
+      }
+    },
   },
+  assetsInclude: ['**/*.glb', '**/*.gltf', '**/*.json'],
 }); 
