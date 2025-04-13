@@ -1,8 +1,2 @@
-
-
-
-
 # Contact
-## Reach out on*LinkedIn*
-
-https://www.linkedin.com/in/edwardhinrichsen/
+## Reach out on [LinkedIn](https://www.linkedin.com/in/rajvishnu)

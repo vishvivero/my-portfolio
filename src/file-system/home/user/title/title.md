@@ -1,16 +1,16 @@
 !(/images/ed-title.png?aspect=2&noflow=true&width=1.33)
 
 
-##   Hi there, 
+##   Hey I'm, 
 
-#  *I'm Ed H*
+#  *Vishnu Raj*
 
-##   • Software Engineer
-##   • Digital Designer
-
-
+##   • Global Operations Lead
+##   • Product Thinker
 
 
 
-### Welcome to ED-Linux 1.0 LTS
+
+
+### Welcome to my Portfolio.
 ### →→ Scroll or type "help" to get started

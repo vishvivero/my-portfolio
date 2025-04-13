@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Ed Hinrichsen – Personal Website</title>
+    <title>Vishnu Raj – Personal Website</title>
     <meta
       name="description"
-      content="My name is Ed Hinrichsen, I’m an award-winning web dev / digital designer and full stack software engineer. I have a passion for all things technology and design, from software engineering & machine learning to UI/UX & 3D graphics."
+      content="Hey, I'm Vishnu Raj. I'm a curious builder, product thinker, and digital creator. I enjoy simplifying messy problems into useful products. From debt management platforms to resume tools to automation hacks — I love exploring how tech can genuinely help people. I work full-time in healthcaretech, and outside of that, I spend evenings and weekends building small, useful tools."
     />
 
     <link rel="icon" type="image/png" href="/icon/32x32.png" />
@@ -18,7 +18,7 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-title"
-      content="Ed Hinrichsen – Personal Website"
+      content="Vishnu Raj – Personal Website"
     />
     <meta
       name="apple-mobile-web-app-status-bar-style"
@@ -26,15 +26,18 @@
     />
     <meta name="theme-color" content="#f6d4b1" />
 
-    <meta property="og:title" content="Ed Hinrichsen – Personal Website" />
+    <meta property="og:title" content="Vishnu Raj – Personal Website" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://edh.dev/" />
     <meta property="og:image" content="https://edh.dev/icon/og-img1.png" />
     <meta
       name="og:description"
-      content="My name is Ed Hinrichsen, I’m an award-winning web dev / digital designer and full stack software engineer. I have a passion for all things technology and design, from software engineering & machine learning to UI/UX & 3D graphics."
+      content="Hey, I'm Vishnu Raj. I'm a curious builder, product thinker, and digital creator. I enjoy simplifying messy problems into useful products."
     />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script type="module" src="/src/main.ts"></script>
   </head>
 
@@ -44,11 +47,11 @@
     <canvas class="webgl"></canvas>
 
     <div id="hero-backup">
-      <h3>Hi there, I’m</h3>
-      <h1>Ed</h1>
+      <h3>Hi there, I'm</h3>
+      <h1>Vishnu</h1>
       <ul>
-        <li>Software Engineer</li>
-        <li>Digital Designer</li>
+        <li>Product Thinker</li>
+        <li>Digital Creator</li>
       </ul>
     </div>
 
@@ -64,7 +67,7 @@
         <div style="display: flex">
           <a
             class="btn"
-            href="https://www.linkedin.com/in/edwardhinrichsen/"
+            href="https://www.linkedin.com/in/rajvishnu"
             target="_blank"
           >
             <svg width="16" height="16">
@@ -80,7 +83,7 @@
           </a>
           <a
             class="btn"
-            href="https://bsky.app/profile/edh.dev/"
+            href="https://twitter.com/vishnuraj"
             target="_blank"
           >
             <svg viewBox="0 0 64 57" width="16" height="14.25">
@@ -91,7 +94,7 @@
           </a>
           <a
             class="btn"
-            href="https://github.com/edhinrichsen/retro-computer-website"
+            href="https://github.com/vishnuraj/retro-computer-website"
             target="_blank"
           >
             <svg width="16" height="16">
@@ -118,18 +121,61 @@
 
     <main>
       <section>
-        <h1 id="aboutMe">Hi there</h1>
-        <p>
-          My name is Ed Hinrichsen, I’m an award-winning web dev / digital
-          designer and full stack software engineer. I have a passion for all
-          things technology and design, from software engineering & machine
-          learning to UI/UX & 3D graphics.
-        </p>
-        <p>
-          In addition to my love of technology and design, I am also interested
-          in education, history, economics and politics.
-        </p>
-
+        <h1 id="aboutMe">About Me</h1>
+        
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="terminal-button"></span>
+              <span class="terminal-button"></span>
+              <span class="terminal-button"></span>
+            </div>
+            <div class="terminal-title">vishnu@retro-portfolio ~ /about</div>
+          </div>
+          
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="terminal-prompt">vishnu@retro-portfolio:~$</span> 
+              <span class="terminal-cmd">whoami</span>
+            </div>
+            <div class="terminal-output">
+I'm Vishnu Raj — a product builder, digital creator, and problem-solver. I enjoy simplifying messy problems into useful products. From debt management platforms to resume tools to automation hacks — I love exploring how tech can genuinely help people.
+            </div>
+            
+            <div class="terminal-line">
+              <span class="terminal-prompt">vishnu@retro-portfolio:~$</span> 
+              <span class="terminal-cmd">cat current_focus.txt</span>
+            </div>
+            <div class="terminal-output">
+I work full-time in healthcare tech, and outside of that, I spend evenings and weekends building small, useful tools around personal finance, career growth, and productivity — while balancing a full-time role in tech.
+            </div>
+            
+            <div class="terminal-line">
+              <span class="terminal-prompt">vishnu@retro-portfolio:~$</span> 
+              <span class="terminal-cmd">./show_adventure.sh</span>
+            </div>
+            <div class="terminal-output adventure-output">
+              <div class="adventure-text">
+                <p class="loading-text">Loading adventure data...</p>
+                <ul>
+                  <li><span>✈️</span>Skydiving in Dubai</li>
+                  <li><span>🥾</span>Hiking remote trails</li>
+                  <li><span>🌎</span>Exploring new places</li>
+                </ul>
+                <p>I believe in pushing boundaries both in tech and in life.</p>
+              </div>
+              <div class="adventure-image">
+                <img src="/src/img/skydiving-dubai.jpg" alt="Vishnu skydiving in Dubai" loading="lazy" />
+              </div>
+            </div>
+            
+            <div class="terminal-line">
+              <span class="terminal-prompt">vishnu@retro-portfolio:~$</span> 
+              <span class="terminal-cmd blinking-cursor">_</span>
+            </div>
+          </div>
+        </div>
+        
         <p>
           Below are details of some of the projects I have developed over my
           fifteen plus years of coding experience.
@@ -207,8 +253,8 @@
           particularly spelling difficult and tedious. While there are a number
           of tools on the market designed to aid people with learning
           difficulties, based on my experience, all fall short in one way or
-          another. To fix this I developed Writing Buddy, a “what you see is
-          what you get” text editor designed to help people write better, faster
+          another. To fix this I developed Writing Buddy, a "what you see is
+          what you get" text editor designed to help people write better, faster
           and with more confidence.
         </p>
         <button
@@ -571,8 +617,8 @@
         <p>
           Below is one of my earliest creations dating back to 2010. As a
           budding 10 year old web designer I needed a website to showcase my
-          work and attract “clients”, so I made one! I called it EdSites and
-          registered the domain name edsites.biz with my father’s credit card
+          work and attract "clients", so I made one! I called it EdSites and
+          registered the domain name edsites.biz with my father's credit card
           and got to work. All the HTML, CSS and even the JavaScript was written
           completely by hand by me. The website was such a success that it
           resulted in some clients albeit they were all my family members.
@@ -598,7 +644,7 @@
         <h1 id="contact">Contact</h1>
         <p style="text-align: center">
           Reach out on
-          <a href="https://www.linkedin.com/in/edwardhinrichsen/"
+          <a href="https://www.linkedin.com/in/rajvishnu"
             ><u><b>LinkedIn</b></u></a
           >
         </p>
@@ -614,32 +660,191 @@
       <div id="loading-items">Starting...</div>
     </div>
     <footer>
-      <div>Developed + Designed by Ed Hinrichsen.</div>
-      <div>Computer design based on the Commodore PET 8296.</div>
       <div>
-        Built on the traditional land of the Wurundjeri and Boon Wurrung peoples
-        of the Kulin nation. I pay my respect to Elders past, present and
-        emerging.
+        Designed and built with ❤️ by Vishnu Raj.
       </div>
       <div>
-        Sovereignty has never been ceded. It always was and always will be
-        Aboriginal land.
+        <a href="mailto:vishnuraj@example.com">vishnuraj@example.com</a>
       </div>
-      <div>COPYRIGHT © 2022-2024 Edward Hinrichsen.</div>
     </footer>
     <script>
       function closeMenu() {
-        document.getElementsByTagName("nav")[0].classList.remove(["active"]);
+        document.querySelector(".menu-body").classList.remove("active");
       }
 
       function toggleMenu() {
-        const nav = document.getElementsByTagName("nav")[0];
-        if (nav.classList.contains("active")) {
-          nav.classList.remove(["active"]);
-        } else {
-          nav.classList.add("active");
-        }
+        document.querySelector(".menu-body").classList.toggle("active");
       }
+
+      // Terminal animations for About section
+      document.addEventListener('DOMContentLoaded', function() {
+        // Select all terminal sections
+        const terminalLines = document.querySelectorAll('.terminal-line');
+        const terminalCmds = document.querySelectorAll('.terminal-cmd');
+        const terminalOutputs = document.querySelectorAll('.terminal-output');
+        
+        // Hide all outputs initially
+        terminalOutputs.forEach(output => {
+          output.style.opacity = '0';
+          output.style.maxHeight = '0';
+          output.style.overflow = 'hidden';
+          output.style.transition = 'opacity 0.5s ease, max-height 0.8s ease';
+        });
+        
+        // Initialize commands with empty content but keep the original text
+        terminalCmds.forEach(cmd => {
+          const originalText = cmd.textContent;
+          cmd.dataset.originalText = originalText;
+          cmd.textContent = '';
+          cmd.classList.remove('typing'); // Remove any animation
+        });
+        
+        // Function to simulate typing
+        function typeText(element, text, i, callback) {
+          if (i < text.length) {
+            element.textContent += text.charAt(i);
+            setTimeout(function() {
+              typeText(element, text, i + 1, callback);
+            }, Math.random() * 50 + 50); // Random delay between 50-100ms
+          } else {
+            // Add blinking cursor at the end of typing
+            const cursor = document.createElement('span');
+            cursor.className = 'cursor-temp';
+            cursor.textContent = '_';
+            cursor.style.animation = 'blink 1s step-end infinite';
+            element.appendChild(cursor);
+            
+            // Wait for "Enter" press effect
+            setTimeout(() => {
+              // Remove temporary cursor
+              if (cursor && cursor.parentNode) {
+                cursor.parentNode.removeChild(cursor);
+              }
+              callback();
+            }, 500);
+          }
+        }
+        
+        // Function to reveal terminal content sequentially
+        function revealTerminal() {
+          let delay = 500; // Start delay
+          
+          // Process each command and output pair
+          for (let i = 0; i < terminalLines.length - 1; i++) {
+            // Skip the last line with blinking cursor
+            const line = terminalLines[i];
+            const cmd = line.querySelector('.terminal-cmd');
+            const output = terminalOutputs[i];
+            
+            // Show the command line first
+            setTimeout(() => {
+              line.style.opacity = '1';
+              
+              // Start typing the command
+              setTimeout(() => {
+                typeText(cmd, cmd.dataset.originalText, 0, () => {
+                  // After typing is complete and "Enter" effect happens, show output
+                  output.style.opacity = '1';
+                  output.style.maxHeight = '500px';
+                  
+                  // If output has content that needs to appear line by line
+                  if (output.classList.contains('adventure-output')) {
+                    const textContent = output.querySelector('.adventure-text');
+                    const loadingText = textContent.querySelector('.loading-text');
+                    const paragraphs = textContent.querySelectorAll('p:not(.loading-text)');
+                    const listItems = textContent.querySelectorAll('li');
+                    const allElements = [...paragraphs, ...listItems];
+                    
+                    // Hide all elements initially except loading text
+                    allElements.forEach(el => {
+                      el.style.opacity = '0';
+                      el.style.display = 'none';
+                    });
+                    
+                    // First show loading text with blinking cursor
+                    loadingText.innerHTML = 'Loading adventure data...';
+                    const loadingCursor = document.createElement('span');
+                    loadingCursor.className = 'cursor-temp';
+                    loadingCursor.textContent = '_';
+                    loadingCursor.style.animation = 'blink 1s step-end infinite';
+                    loadingText.appendChild(loadingCursor);
+                    
+                    // Simulate loading completion
+                    setTimeout(() => {
+                      loadingText.innerHTML = 'When not coding, I enjoy exploring the world through:';
+                      
+                      // Reveal elements one by one with typewriter effect
+                      let lineDelay = 300;
+                      allElements.forEach((el, idx) => {
+                        setTimeout(() => {
+                          el.style.display = 'block';
+                          el.style.opacity = '0';
+                          
+                          // Apply typing animation to list items
+                          if (el.tagName.toLowerCase() === 'li') {
+                            const emoji = el.querySelector('span').textContent;
+                            const text = el.textContent.replace(emoji, '');
+                            el.innerHTML = `<span>${emoji}</span>`;
+                            el.style.opacity = '1';
+                            let i = 0;
+                            
+                            const typeListItem = () => {
+                              if (i < text.length) {
+                                el.innerHTML = `<span>${emoji}</span>${text.substring(0, i+1)}`;
+                                i++;
+                                setTimeout(typeListItem, 30);
+                              }
+                            };
+                            
+                            typeListItem();
+                          } else {
+                            el.style.opacity = '1';
+                          }
+                        }, lineDelay * (idx + 1));
+                      });
+                    }, 1200);
+                  }
+                });
+              }, 300);
+              
+            }, delay);
+            
+            delay += 2500; // Longer delay for each command-output pair
+          }
+          
+          // Show the final line with blinking cursor after all commands
+          setTimeout(() => {
+            terminalLines[terminalLines.length - 1].style.opacity = '1';
+          }, delay);
+        }
+        
+        // Hide all lines initially except the last one (which has the cursor)
+        terminalLines.forEach((line, index) => {
+          line.style.opacity = '0';
+          line.style.transition = 'opacity 0.3s ease';
+        });
+        
+        // Start the animation when section becomes visible
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              revealTerminal();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        
+        const terminalWindow = document.querySelector('.terminal-window');
+        if (terminalWindow) {
+          observer.observe(terminalWindow);
+        }
+      });
     </script>
     <script
       fetchpriority="high"

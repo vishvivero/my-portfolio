@@ -7,7 +7,7 @@
 
 
 #  Hi there,
-#  *I'm Edward*
+#  *I'm Vishnu*
 #  -Creative Developer
 ##     — Computer Science graduate of
 ##        the University of Melbourne

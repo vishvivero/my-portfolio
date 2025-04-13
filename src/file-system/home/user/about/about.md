@@ -1,11 +1,7 @@
-
-
-
-
 # Hi there
 
-My name is Ed Hinrichsen, I’m an award-winning web dev / digital designer and full stack software engineer. I have a passion for all things technology and design, from software engineering & machine learning to UI/UX & 3D graphics.
+Hey, I'm Vishnu Raj. I'm a curious builder, product thinker, and digital creator. I enjoy simplifying messy problems into useful products. From debt management platforms to resume tools to automation hacks — I love exploring how tech can genuinely help people.
 
-In addition to my love of technology and design, I am also interested in education, history, economics and politics.
+I work full-time in healthcare tech, and outside of that, I spend evenings and weekends building small, useful tools.
 
-Type "cd ~/projects" then "ls" to see details of some of the projects I have developed over my fifteen plus years of coding experience.
+Type "cd ~/projects" then "ls" to see details of some of the projects I have developed.
