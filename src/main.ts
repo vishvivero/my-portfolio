@@ -1,7 +1,10 @@
 import "./main.css";
 import WebGL from "./webgl";
 
-WebGL();
+// Initialize WebGL to render the retro computer
+document.addEventListener('DOMContentLoaded', () => {
+  WebGL();
+});
 
 const root = document.documentElement;
 
