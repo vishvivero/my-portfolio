@@ -1,6 +1,7 @@
 [build]
-  command = "npm install && npm run build && npm run preview"
+  command = "npm install && npm run build"
   publish = "dist"
+  timeout = 30m
 
 [[redirects]]
   from = "/*"

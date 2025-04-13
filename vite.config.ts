@@ -7,6 +7,20 @@ export default defineConfig({
   worker: {},
   build: {
     sourcemap: false,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        passes: 1
+      }
+    },
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['three', 'lil-gui', 'stats.js'],
+        }
+      }
+    }
   },
   server: {
     open: true,
