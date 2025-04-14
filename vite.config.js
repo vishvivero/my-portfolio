@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [
     checker({ typescript: true }),
   ],
-  base: '/',
+  base: './',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

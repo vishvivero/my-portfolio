@@ -1,0 +1,10 @@
+{
+  "name": "netlify-webgl-plugin",
+  "version": "1.0.0",
+  "main": "netlify-build-plugin.js",
+  "description": "A Netlify plugin to handle WebGL assets",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+} 

@@ -3,6 +3,21 @@
   publish = "dist"
   timeout = 1800
 
+[[plugins]]
+  package = "."
+  
+[plugins.inputs]
+  debug = true
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[build.processing]
+  skip_processing = true
+
+[build.processing.images]
+  compress = false
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
