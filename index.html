@@ -40,9 +40,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="/models/Commodore710_33.5.glb" as="fetch" crossorigin="anonymous">
-    <link rel="preload" href="/textures/bake-quality-5.jpg" as="image">
-    <link rel="preload" href="/textures/bake_floor-quality-3.jpg" as="image">
+    <link rel="preload" href="./models/Commodore710_33.5.glb" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="./textures/bake-quality-5.jpg" as="image">
+    <link rel="preload" href="./textures/bake_floor-quality-3.jpg" as="image">
+    
+    <!-- WebGL Detection Script -->
+    <script>
+      function detectWebGL() {
+        // Check for WebGL support
+        var canvas = document.createElement('canvas');
+        var gl = canvas.getContext('webgl') || 
+                 canvas.getContext('experimental-webgl');
+        
+        if (gl && gl instanceof WebGLRenderingContext) {
+          console.log("WebGL is supported");
+          return true;
+        } else {
+          console.error("WebGL is not supported");
+          return false;
+        }
+      }
+      
+      // Show backup content if WebGL not available
+      window.addEventListener('DOMContentLoaded', function() {
+        if (!detectWebGL()) {
+          document.getElementById('hero-backup').style.display = 'flex';
+          document.querySelector('.webgl').style.display = 'none';
+          document.getElementById('webgl-error').style.display = 'block';
+        }
+      });
+    </script>
     
     <!-- Load WebGL helper script before main app -->
     <script fetchpriority="high" src="https://cdn-ts.netlify.app/webgl-helper@3.0.11/webgl-helper.min.js"></script>
@@ -69,12 +96,32 @@
       #hero-backup {
         display: none;
       }
+      #webgl-error {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 0, 0, 0.1);
+        color: #c00;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 14px;
+        z-index: 1000;
+        text-align: center;
+        max-width: 90%;
+      }
       /* Add minimal critical CSS for initial rendering */
     </style>
   </head>
 
   <body>
     <div id="home"></div>
+
+    <!-- WebGL Error message -->
+    <div id="webgl-error">
+      WebGL not detected or failed to load. Please try a different browser or device.
+    </div>
 
     <!-- Ensure canvas is properly loaded -->
     <canvas class="webgl"></canvas>
