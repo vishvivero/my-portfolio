@@ -25,7 +25,7 @@ class ShaderToScreen {
     this.cameraRTT.position.set(0, 0, 1);
 
     this.outputTexture = new THREE.WebGLRenderTarget(width, height, {
-      format: THREE.RGBFormat,
+      format: THREE.RGBAFormat,
     });
 
     this.shader = new THREE.ShaderMaterial(shader);

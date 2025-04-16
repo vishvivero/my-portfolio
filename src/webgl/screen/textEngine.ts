@@ -102,13 +102,13 @@ export default function ScreenTextEngine(
   rootGroup.add(textBlackMesh);
 
   const textBgMesh = new THREE.Mesh(
-    new THREE.PlaneBufferGeometry(0, 0),
+    new THREE.PlaneGeometry(0, 0),
     new THREE.MeshBasicMaterial({ color: textColor })
   );
   rootGroup.add(textBgMesh);
 
   const caret = new THREE.Mesh(
-    new THREE.PlaneBufferGeometry(h2Font.size, h2Font.size * 1.6),
+    new THREE.PlaneGeometry(h2Font.size, h2Font.size * 1.6),
     textMaterial
   );
   caret.position.z = -0.1;
@@ -178,7 +178,7 @@ export default function ScreenTextEngine(
   }): {
     colorText: undefined | TextGeometry;
     blackText: undefined | TextGeometry;
-    bg: undefined | THREE.PlaneBufferGeometry;
+    bg: undefined | THREE.PlaneGeometry;
   } {
     props.wrap = props.wrap !== undefined ? props.wrap : false;
     props.isWord = props.isWord !== undefined ? props.isWord : false;
@@ -201,7 +201,7 @@ export default function ScreenTextEngine(
     const returnObj: {
       colorText: undefined | TextGeometry;
       blackText: undefined | TextGeometry;
-      bg: undefined | THREE.PlaneBufferGeometry;
+      bg: undefined | THREE.PlaneGeometry;
     } = {
       colorText: undefined,
       blackText: undefined,
@@ -221,7 +221,7 @@ export default function ScreenTextEngine(
     else textGeometry.translate(0, -props.font.height, -0.001);
 
     if (props.highlight) {
-      const background = new THREE.PlaneBufferGeometry(
+      const background = new THREE.PlaneGeometry(
         strLen + props.font.tracking * 2,
         props.font.height + props.font.leading / 2,
         1,
@@ -348,7 +348,7 @@ export default function ScreenTextEngine(
 
     const textColorGeometry: TextGeometry[] = [];
     const textBlackGeometry: TextGeometry[] = [];
-    const textBgGeometry: THREE.PlaneBufferGeometry[] = [];
+    const textBgGeometry: THREE.PlaneGeometry[] = [];
 
     for (let i = 0; i < tokens.length; i++) {
       const t = tokens[i];
@@ -674,7 +674,7 @@ export default function ScreenTextEngine(
     const height = width / aspectRatio;
 
     const imageFrame = new THREE.Mesh(
-      new THREE.PlaneBufferGeometry(width, height, 1, 1),
+      new THREE.PlaneGeometry(width, height, 1, 1),
       new THREE.MeshBasicMaterial({ color: 0x000000 })
     );
 

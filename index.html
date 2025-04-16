@@ -26,55 +26,31 @@
     />
     <meta name="theme-color" content="#f6d4b1" />
 
+    <!-- High-priority preloads for critical 3D content -->
+    <link rel="preload" as="fetch" href="./models/Commodore710_33.5.glb" fetchpriority="high" crossorigin />
+    <link rel="preload" as="image" href="./textures/bake-quality-5.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="./textures/bake_floor-quality-3.jpg" fetchpriority="high" />
+    
+    <!-- Load WebGL script early and with high priority -->
+    <script src="./fix-webgl.js" fetchpriority="high"></script>
+    <script src="https://cdn-ts.netlify.app/webgl-helper@3.0.11/webgl-helper.min.js" fetchpriority="high"></script>
+
+    <!-- Meta tags -->
     <meta property="og:title" content="Vishnu Raj – Personal Website" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://edh.dev/" />
-    <meta property="og:image" content="https://edh.dev/icon/og-img1.png" />
+    <meta property="og:image" content="./icon/og-img1.png" />
     <meta
       name="og:description"
       content="Hey, I'm Vishnu Raj. I'm a curious builder, product thinker, and digital creator. I enjoy simplifying messy problems into useful products."
     />
     <link rel="manifest" href="./manifest.json" />
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Preload critical assets -->
-    <link rel="preload" href="./models/Commodore710_33.5.glb" as="fetch" crossorigin="anonymous">
-    <link rel="preload" href="./textures/bake-quality-5.jpg" as="image">
-    <link rel="preload" href="./textures/bake_floor-quality-3.jpg" as="image">
-    
-    <!-- WebGL Detection Script -->
-    <script>
-      function detectWebGL() {
-        // Check for WebGL support
-        var canvas = document.createElement('canvas');
-        var gl = canvas.getContext('webgl') || 
-                 canvas.getContext('experimental-webgl');
-        
-        if (gl && gl instanceof WebGLRenderingContext) {
-          console.log("WebGL is supported");
-          return true;
-        } else {
-          console.error("WebGL is not supported");
-          return false;
-        }
-      }
-      
-      // Show backup content if WebGL not available
-      window.addEventListener('DOMContentLoaded', function() {
-        if (!detectWebGL()) {
-          document.getElementById('hero-backup').style.display = 'flex';
-          document.querySelector('.webgl').style.display = 'none';
-          document.getElementById('webgl-error').style.display = 'block';
-        }
-      });
-    </script>
-    
-    <!-- Load WebGL helper script before main app -->
-    <script fetchpriority="high" src="https://cdn-ts.netlify.app/webgl-helper@3.0.11/webgl-helper.min.js"></script>
-    
-    <!-- Defer non-critical JS -->
+    <!-- Main application script - deferred -->
     <script type="module" src="./src/main.ts" defer></script>
 
     <!-- Add critical CSS inline to prevent render blocking -->
@@ -95,6 +71,26 @@
       }
       #hero-backup {
         display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: clamp(0px, 95vw, 580px);
+        margin: auto;
+        color: #525252;
+        outline: none;
+        z-index: 0;
+      }
+      #hero-backup h1, #hero-backup h3 {
+        margin: 0;
+        text-align: left;
+      }
+      #hero-backup ul {
+        margin-left: 32px;
       }
       #webgl-error {
         display: none;
@@ -111,7 +107,6 @@
         text-align: center;
         max-width: 90%;
       }
-      /* Add minimal critical CSS for initial rendering */
     </style>
   </head>
 
@@ -123,9 +118,10 @@
       WebGL not detected or failed to load. Please try a different browser or device.
     </div>
 
-    <!-- Ensure canvas is properly loaded -->
+    <!-- Canvas for WebGL rendering -->
     <canvas class="webgl"></canvas>
 
+    <!-- Fallback content -->
     <div id="hero-backup">
       <h3>Hi there, I'm</h3>
       <h1>Vishnu</h1>
@@ -134,6 +130,33 @@
         <li>Digital Creator</li>
       </ul>
     </div>
+
+    <!-- Debug console for WebGL issues - hidden by default -->
+    <div id="webgl-debug" style="display: none; position: fixed; bottom: 10px; left: 10px; max-width: 400px; max-height: 200px; overflow: auto; background: rgba(0,0,0,0.7); color: white; padding: 10px; font-size: 12px; font-family: monospace; z-index: 9999;"></div>
+    
+    <!-- Add a debug button in dev environments -->
+    <button id="debug-toggle" style="position: fixed; bottom: 10px; right: 10px; z-index: 9999; background: #333; color: white; border: none; padding: 5px 10px; display: none;">Debug</button>
+    
+    <script>
+      // Add debug capabilities
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        document.getElementById('debug-toggle').style.display = 'block';
+        document.getElementById('debug-toggle').addEventListener('click', function() {
+          const debugEl = document.getElementById('webgl-debug');
+          debugEl.style.display = debugEl.style.display === 'none' ? 'block' : 'none';
+        });
+      }
+      
+      // Log to both console and debug element
+      function debugLog(message) {
+        console.log(message);
+        const debugEl = document.getElementById('webgl-debug');
+        const line = document.createElement('div');
+        line.textContent = message;
+        debugEl.appendChild(line);
+        debugEl.scrollTop = debugEl.scrollHeight;
+      }
+    </script>
 
     <nav>
       <div class="menu-btn">

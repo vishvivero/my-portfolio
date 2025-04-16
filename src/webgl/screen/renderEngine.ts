@@ -23,7 +23,7 @@ export default function ScreenRenderEngine(
   cameraRTT.position.set(0, 0, 1);
 
   const rtTexture = new THREE.WebGLRenderTarget(resolution * 1.33, resolution, {
-    format: THREE.RGBFormat,
+    format: THREE.RGBAFormat,
   });
 
   const composer = new EffectComposer(renderer, rtTexture);
@@ -73,7 +73,14 @@ export default function ScreenRenderEngine(
   // **********************************
 
   const environmentMapTexture = assists.environmentMapTexture;
-  environmentMapTexture.encoding = THREE.sRGBEncoding;
+  // @ts-ignore - Handle both newer and older Three.js versions
+  if (THREE.ColorManagement) {
+    // @ts-ignore - For Three.js >= 0.150
+    environmentMapTexture.colorSpace = THREE.SRGBColorSpace;
+  } else {
+    // For Three.js < 0.150
+    environmentMapTexture.encoding = THREE.sRGBEncoding;
+  }
 
   const shaderToScreen = new ShaderToScreen(
     {
@@ -89,7 +96,15 @@ export default function ScreenRenderEngine(
     resolution
   );
 
-  shaderToScreen.outputTexture.texture.encoding = THREE.sRGBEncoding;
+  // @ts-ignore - Handle both newer and older Three.js versions
+  if (THREE.ColorManagement) {
+    // @ts-ignore - For Three.js >= 0.150
+    shaderToScreen.outputTexture.texture.colorSpace = THREE.SRGBColorSpace;
+  } else {
+    // For Three.js < 0.150
+    shaderToScreen.outputTexture.texture.encoding = THREE.sRGBEncoding;
+  }
+  
   const material = new THREE.MeshStandardMaterial();
   material.metalness = 0;
   material.roughness = 0.125;
